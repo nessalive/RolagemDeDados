@@ -3,7 +3,7 @@ let quantidadeDados = parseInt(prompt("Quantos dados você deseja inserir?"));
 let quantidadeLados = parseInt(prompt("Quantos Lados você deseja para os dados?"));
 let quantidadetentativas = parseInt(prompt("Quantos vezes você deseja rolar os dados?"));
 
-function criarElementoParagrafo(texto) {
+let criarElementoParagrafo = (texto) =>{
     let paragrafo = document.createElement("p");
     paragrafo.textContent = texto;
     document.body.appendChild(paragrafo);
@@ -13,7 +13,7 @@ criarElementoParagrafo("Boa sorte nos valores");
 criarElementoParagrafo("quantidade de dados: " + quantidadeDados);
 criarElementoParagrafo("quantidade de Lados: " + quantidadeLados);
 
-function rolarDados(quantidadeDados, quantidadeLados, quantidadetentativas) {
+let rolarDados = (quantidadeDados, quantidadeLados, quantidadetentativas) => {
     let num5 = [];
 
     for (let tentativas = 0; tentativas < quantidadetentativas; tentativas++) {
@@ -33,7 +33,7 @@ function rolarDados(quantidadeDados, quantidadeLados, quantidadetentativas) {
 
 let TotalTodasSomas = rolarDados(quantidadeDados, quantidadeLados, quantidadetentativas);
 
-function somaGeral() {
+let somaGeral = () => {
     let totais = 0
     for (let total = 0; total < TotalTodasSomas.length; total++) {
         totais += TotalTodasSomas[total];
