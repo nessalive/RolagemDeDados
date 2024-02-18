@@ -1,0 +1,46 @@
+let quantidadeDados = parseInt(prompt("Quantos dados você deseja inserir?"));
+let quantidadeLados = parseInt(prompt("Quantos Lados você deseja para os dados?"));
+let quantidadetentativas = parseInt(prompt("Quantos vezes você deseja rolar os dados?"));
+
+console.log("Boa sorte nos valores");
+console.log("quantidade de dados: "+ quantidadeDados);
+console.log("quantidade de Lados: "+ quantidadeLados);
+
+const rolarDados = ()=> {
+let num5 = [];
+
+for (let tentativas = 0; tentativas < quantidadetentativas; tentativas++){
+console.log(`---------------- Tentativa ${tentativas + 1} --------------------}`)
+let soma1 = 0;
+for (let dado = 0; dado < quantidadeDados; dado++) {
+
+    const numeroAleatorio = Math.floor(Math.random() * quantidadeLados) + 1;
+    console.log(`Dado ${dado + 1}: ${numeroAleatorio}`)
+    soma1 += numeroAleatorio
+    
+}
+num5.push(soma1);
+console.log("Soma dos valores: "+ soma1)
+
+}
+
+return num5;
+}
+
+
+let TotalTodasSomas = rolarDados();
+
+let somaGeral= ()=>{
+let totais = 0
+for(let total = 0; total < TotalTodasSomas.length; total++){
+totais += TotalTodasSomas[total];
+
+}
+return  totais;
+}
+
+console.log("Somas totais de todas as tentativas: " + somaGeral());
+
+
+
+
